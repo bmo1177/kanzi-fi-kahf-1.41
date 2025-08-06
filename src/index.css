@@ -1,0 +1,2214 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme - Islamic Golden & Cream palette */
+    --background: 48 100% 98%;
+    --foreground: 30 10% 15%;
+    --card: 45 50% 96%;
+    --card-foreground: 30 10% 15%;
+    --popover: 48 100% 98%;
+    --popover-foreground: 30 10% 15%;
+    --primary: 43 74% 66%;
+    --primary-foreground: 45 100% 98%;
+    --primary-glow: 45 85% 75%;
+    --secondary: 45 25% 92%;
+    --secondary-foreground: 30 15% 25%;
+    --muted: 45 20% 94%;
+    --muted-foreground: 30 8% 50%;
+    --accent: 35 91% 65%;
+    --accent-foreground: 45 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 43 74% 66%;
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark theme - Midnight & Amber palette */
+    --background: 220 25% 8%;
+    --foreground: 45 100% 95%;
+    --card: 220 20% 10%;
+    --card-foreground: 45 100% 95%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 45 100% 95%;
+    --primary: 45 85% 75%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 45 90% 85%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 45 100% 95%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 45 20% 70%;
+    --accent: 35 80% 70%;
+    --accent-foreground: 220 25% 8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 100% 95%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 45 85% 75%;
+
+    /* Custom design tokens for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+  }
+
+  .blush {
+    /* Blush theme - Soft pink & white with gold accents */
+    --background: 350 100% 98%;
+    --foreground: 350 25% 15%;
+    --card: 350 25% 96%;
+    --card-foreground: 350 25% 15%;
+    --popover: 350 100% 98%;
+    --popover-foreground: 350 25% 15%;
+    --primary: 43 74% 66%;
+    --primary-foreground: 350 30% 98%;
+    --primary-glow: 45 85% 75%;
+    --secondary: 350 20% 94%;
+    --secondary-foreground: 350 30% 20%;
+    --muted: 350 15% 96%;
+    --muted-foreground: 350 10% 50%;
+    --accent: 350 40% 85%;
+    --accent-foreground: 350 30% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 350 30% 98%;
+    --border: 350 15% 90%;
+    --input: 350 15% 90%;
+    --ring: 43 74% 66%;
+
+    /* Custom design tokens for blush mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-standard);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+    transition: all 0.3s ease;
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer utilities {
+  .overflow-wrap-break-word {
+    overflow-wrap: break-word;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-smooth);
+  }
+
+  .elegant-card:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background-size: 100% 100%;
+      animation: none;
+    }
+    
+    .elegant-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    line-height: 1.8;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Custom utility classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .elegant-card {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 shadow-elegant;
+    transition: var(--transition-standard);
+  }
+  }
