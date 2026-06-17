@@ -1,0 +1,382 @@
+{
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/postcss.config.js": {
+    "mtime": 1781735923.2585576,
+    "hash": "ef3ba2a81ba19f8ea5ddf625521e96f0"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/tailwind.config.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "58790b4b8b515603bedc906c124c8b42"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/eslint.config.js": {
+    "mtime": 1781735923.2585576,
+    "hash": "289d6b79f2956f20f833b7b2fe6c3e9b"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/vite.config.ts": {
+    "mtime": 1781737030.7622242,
+    "hash": "3026b4cf17dc7559ffe0777620ab8e22"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/App.tsx": {
+    "mtime": 1781737012.023123,
+    "hash": "2c8fbd2beeb299d2b75082b6ea755c86"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/main.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "15da54e39d48ef50de2df869b054c181"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/vite-env.d.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "0352474ba2918efe13895edbc3780d94"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/hooks/use-toast.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "bc4be55df07bc8727d5df9ed7799ad64"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/hooks/useTheme.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "4c4dc7a60c11e98039f81abedde211fa"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/hooks/use-mobile.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "209b5193af16624cdd89d3591480dd48"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/data/ayahs.ts": {
+    "mtime": 1781735923.2625577,
+    "hash": "78ca884f463ef1f622a450f2e1c38b62"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/data/tafsir.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "3e2c9bf79e85f1fc287232ac8a7e16f3"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/Navbar.tsx": {
+    "mtime": 1781736673.0779092,
+    "hash": "f85fdb0f9ac548aa1823e8586f8640b0"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ReflectionGallery.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "36fbba5f883390639e217a9878819df1"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ReflectionForm.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "c1c26782a5f551f9f4d3edce005ada0d"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/JumuahBanner.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "dd4b113bfae4524c133886bb78279109"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ThemeToggle.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "be7c71a0e8b2179c93c3e760d108887e"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/Sparkles.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "e1754301d99a41b0ecd13765e371a061"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/tabs.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "edad06f905be7a7e3634fdbe1b6ad61a"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/input.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "c7cbc8cd45d01649277bd7107581cb36"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/dropdown-menu.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "cf7fe61c5c91eae0bdb3b3864508d48d"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/checkbox.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "ca06e9d95214f6c4b90a760098d21830"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/drawer.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "1caf6dac62a50b2558dd36d6d7644891"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/radio-group.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "3ace644678cd101153deee82d72048d9"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/alert-dialog.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "aca8996e4020285a789d58348abce552"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/sheet.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "8e2e9226c754d6b7ab2b822bc803cfda"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/avatar.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "ce4fe60f4c48c01a5a601d9835648b40"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/slider.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "ccbb4f4470af296eafa94f9972e8a4f9"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/sidebar.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "27c8db4816b123901768861c586f1cdb"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/menubar.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "a3a53eadb4e2d52cb841ebd2a910d33d"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/alert.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "48dac79c18e0c3ff687c320c6fcf1590"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/input-otp.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "084089343296a7ebcb40fff14c62cb30"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/use-toast.ts": {
+    "mtime": 1781735923.2625577,
+    "hash": "4f094014a1315ca1081cbdc7f78d55cc"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/toast.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "6b9ed7f669208f6631d1c44bbd556877"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/accordion.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "1543fc386d0aba4654f3199bf017eaab"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/command.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "f7bf707fa618dc27429ec5f1c19028c6"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/scroll-area.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "c4d63c56a99feb600ed0e9bbcfd70829"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/pagination.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "de159ac89490951ee82b4991f604e394"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/context-menu.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "d4964b3b39ddf550f9b30c104e0080d8"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/switch.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "1210b13831d433e8a9488bab91432dd4"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/form.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "0ed732617aace88aa93d42fe438dd281"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/breadcrumb.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "377763c80b5d08aa7748a2d532bb290e"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/progress.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "9202867eacff0cb1b253a05d5d65bfc0"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/aspect-ratio.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "ea9c6ff6c2931b5089972bfba3fa5c1f"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/carousel.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "005a47594c5c8f09e27f0ed1f02197cd"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/toaster.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "d0e062810c47a46b9bb4e8ea19875a02"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/card.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "a8c37b8b2cb24a44f46cbae530c075af"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/badge.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "f9c097d427c421f83eb92772a4b8ec06"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/table.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "efdbaeb9710b2f60de7c0e18bd4e3528"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/calendar.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "577b2299d7782fffe974b558233dba3a"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/collapsible.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "8bcc61ee503a05663fb77ad9b7ec064a"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/select.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "22886e4c5f841c13755088e26c7387e3"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/separator.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "e970901b62fe8b73d2b9254fad77f583"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/toggle-group.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "6338f2936a2474998e1e546c6a1664a6"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/chart.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "8d4b13c80ec8ade9908712155bf0d117"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/popover.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "b177b8aa44e03c0a5d2a9f00b11d55be"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/dialog.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "3ca438e8db79dc5fa9fb4662372afadd"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/navigation-menu.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "630417e56e3f5f9a5f323565ed86d430"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/textarea.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "fb19dce4f1d33ed093b75db5cefed562"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/button.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "33f8ef5c351115f8904b2a2f3decef54"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/hover-card.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "004259115672f57e95da0b72ea2c613e"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/sonner.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "5cc4d43770ff3cffb5ba65d5ea3ee26d"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/tooltip.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "336ca01a98037c9a1dfe936bde3ee549"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/label.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "7ea839d3fa873fb063a9709a79e47561"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/resizable.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "cf5896bc9f1524c3f3fb2d4f24eb54bf"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/toggle.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "5840a6d0f51ab73d9f40592fd0db4899"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/ui/skeleton.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "a5a4d6d5551d4c7feb8176a23e7eb07c"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/auth/LoginForm.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "209d0391f5de3536f3420ae0aa03308c"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/auth/AuthProvider.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "05818ac7acc558c5a6026dc45997d844"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/auth/ProtectedRoute.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "830d02c479c2a858821ce59b8bab7b8c"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/admin/DuaasAdminDashboard.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "bff6f582193f66a90d32b553ee91801e"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/admin/AdminDashboard.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "6c47f5d49f781b85877a17433a0112c7"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/components/admin/ImportExportTools.tsx": {
+    "mtime": 1781735923.2625577,
+    "hash": "9f8d22e8e1e3c078c72bc27099402e59"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/integrations/supabase/client.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "1c3c288fac112d42799f91b3959ce07f"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/integrations/supabase/types.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "c51e684a93bc98db998f784cafa80add"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/lib/utils.ts": {
+    "mtime": 1781735923.2665577,
+    "hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/NotFound.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "7f6f4e93331684fdf5a149fdf712cb80"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/TafsirPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "d1fe8dfae8ee657d4f773aacffaccfc5"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/SubmitPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "df1387115306e412f120675ff58c7d35"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/AdminPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "258ce6e651f79a24e4f4e7e2b9037500"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/AdminLoginPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "e44d3c249941165356bd230e6e4915ed"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/DuaaPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "29ef1c9e8263cfdc446c566b9a8ee190"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/StatsPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "4d5a2ce75e9685a80ddb908621196ed7"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/GalleryPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "45db55bc1d2363368b4c5b257e73616a"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/Index.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "7d2dcbd70e662aca9c2225c4a4e16b12"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/AdminDashboardPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "7b326073265c787946df813930c6fbb8"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/src/pages/AboutPage.tsx": {
+    "mtime": 1781735923.2665577,
+    "hash": "a9a8c759b6b0889a00088c1d131a4a48"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/supabase/migrations/20250802142202_c33d8887-6249-4193-b817-35e930cf9d3c.sql": {
+    "mtime": 1781735923.2665577,
+    "hash": "5c6206a23803156fa160c854d2bf8591"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/supabase/migrations/20250802141642_7a6884ce-a4b6-4ffa-8cc6-1a435cb8a0f1.sql": {
+    "mtime": 1781735923.2665577,
+    "hash": "177e1ffe44893850693b53241a45a1aa"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/supabase/migrations/20250803140225_9661ece4-e899-45ab-8bf0-1d4166502aee.sql": {
+    "mtime": 1781735923.2665577,
+    "hash": "ec823eada0005ffa8962c14b851f874b"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/supabase/migrations/20250803135122_adac88a2-0d7e-4a1a-bfa0-128ad239e623.sql": {
+    "mtime": 1781735923.2665577,
+    "hash": "a71793559f8f01431cd7b5900d6ce6a1"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/README.md": {
+    "mtime": 1781736330.0224001,
+    "hash": "3e1878c5a27b813009ef48cb0b53a44c"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/index.html": {
+    "mtime": 1781735923.2585576,
+    "hash": "7a116d0f9e744f3d22deda0094c88336"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/public/robots.txt": {
+    "mtime": 1781735923.2625577,
+    "hash": "f9dff89adf98833e676de2205921996a"
+  },
+  "/home/dev-lab/Documents/GitHub/kanzi-fi-kahf-1.41/public/placeholder.svg": {
+    "mtime": 1781735923.2625577,
+    "hash": "35707bd9960ba5281c72af927b79291f"
+  }
+}
