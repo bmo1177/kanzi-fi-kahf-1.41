@@ -14,6 +14,8 @@ export const Navbar = () => {
     { name: "الرئيسية", href: "/" },
     { name: "شاركي تأملك", href: "/submit" },
     { name: "ركن الكنوز", href: "/gallery" },
+    { name: "الدعاء", href: "/duaa" },
+    { name: "تفسير السعدي", href: "/tafsir" },
     { name: "عن المجموعة", href: "/about" },
     { name: "الإدارة", href: "/admin", adminOnly: true },
   ];
@@ -101,8 +103,3 @@ export const Navbar = () => {
     </nav>
   );
 };
-<nav className="hidden md:flex gap-6">
-  <Link to="/tafsir" className="hover:text-primary">
-    تفسير السعدي
-  </Link>
-</nav>
